@@ -11,7 +11,7 @@ interface ApiService {
 
     @Multipart
     @POST("upload")
-    fun uploadFile(@Part image: MultipartBody.Part, @Part("file") name: RequestBody): Call<Cat>
+    fun uploadFile(@Part image: MultipartBody.Part, @Part("sub_id") name: String): Call<Cat>
 
     @GET("search")
     fun search(
