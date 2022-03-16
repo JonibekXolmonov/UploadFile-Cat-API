@@ -42,7 +42,6 @@ class ApiClient(var context: Context) {
         })
         .addInterceptor(Interceptor { chain ->
             val builder = chain.request().newBuilder()
-            builder.header("x-api-key", "cd115401-446a-4694-b133-c558324ab265")
             chain.proceed(builder.build())
         })
         .build()
@@ -52,6 +51,7 @@ class ApiClient(var context: Context) {
             client.newBuilder().addInterceptor(Interceptor { chain ->
                 var request = chain.request()
                 val builder = request.newBuilder()
+                builder.header("x-api-key", "cd115401-446a-4694-b133-c558324ab265")
                 request = builder.build()
                 chain.proceed(request)
             }).build()
