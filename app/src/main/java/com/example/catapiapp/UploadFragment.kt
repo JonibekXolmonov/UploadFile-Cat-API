@@ -21,6 +21,7 @@ import com.example.catapiapp.model.Cat
 import com.example.catapiapp.networking.ApiClient
 import com.example.catapiapp.networking.services.ApiService
 import com.google.android.material.button.MaterialButton
+import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -81,9 +82,9 @@ class UploadFragment : Fragment(R.layout.fragment_upload) {
             val body: MultipartBody.Part =
                 MultipartBody.Part.createFormData("file", file.name, reqFile)
 
-            val name = RequestBody.create("text/plain".toMediaTypeOrNull(), "file")
+            //val name = RequestBody.create("text/plain".toMediaTypeOrNull(), "file")
 
-            apiService.uploadFile(body, name).enqueue(object : Callback<Cat> {
+            apiService.uploadFile(body,"sub_idjjhdbid").enqueue(object : Callback<Cat> {
                 override fun onResponse(call: Call<Cat>, response: Response<Cat>) {
                     Log.d("TAG", "onResponse: ${response.body()}")
                 }
