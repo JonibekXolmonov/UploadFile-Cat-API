@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 class ApiClient(var context: Context) {
 
-    var BASE_URl = "https://api.thecatapi.com/v1/images/"
+    var BASE_URl = "https://api.thecatapi.com/v1/"
 
     private val client = getClient()
     private val retrofit = getRetrofit(client)

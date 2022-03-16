@@ -10,13 +10,16 @@ import retrofit2.http.*
 interface ApiService {
 
     @Multipart
-    @POST("upload")
+    @POST("images/upload")
     fun uploadFile(@Part image: MultipartBody.Part, @Part("sub_id") name: String): Call<Cat>
 
-    @GET("search")
+    @GET("images/search")
     fun search(
         @Query("limit") limit: Int,
         @Query("page") page: Int,
         @Query("mimi_types") type: String
     ): Call<List<Cat>>
+
+    @GET("images")
+    fun getUploads(@Query("page") page: Int, @Query("limit") limit: Int): Call<List<Cat>>
 }

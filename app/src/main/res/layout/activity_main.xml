@@ -11,10 +11,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-    </FrameLayout>
+        android:orientation="vertical" />
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
